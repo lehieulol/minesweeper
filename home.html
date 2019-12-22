@@ -9,32 +9,46 @@
 	</head>
 	<style>
 		body {
-			background-image: url('bg.png');<!--1-->
-			background-repeat: no-repeat;<!--2-->
+			background-image: url('bg.png');
+			background-repeat: no-repeat;
+			height: 660;
+			width: 1360px;
 		}
 		table, th, td {
 			text-align: center;
 			border: 1px solid black;
 			border-collapse: collapse;
-			margin: 185px 605px 787px 387px;
+			margin: 325px 605px 787px 387px;
+		}
+		th {
+			width: 50px;
+		}
+		#hsc {
+			width: 85px;
 		}
 		ul {
 			margin : 70px 0px 0px 200px;
 		}
+		img {
+			opacity: 0;
+		}
+		button{
+			margin: 300px 408px;
+		}
 	</style>
 	<body>
-		<ul>
+		<ul style = 'position:absolute; z-index:0'>
 			<li>Sever opened on December 20th</li>
 			<li>Server will close on December 22nd</li>
 			<li><a href = 'https://en.wikipedia.org/wiki/Microsoft_Minesweeper'>More about Minesweeper</a></li>
 			<li>PvP mode hasn't been completed yet</li>
 		</ul>
-		<table>
+		<table style = 'position:absolute; z-index:1', id = 'hs'>
 			<caption>HIGH SCORE</caption>
 			<tr>
 				<th>Mode</th>
 				<th>Player</th>
-				<th>High score</th>
+				<th id = 'hsc'>High score</th>
 			</tr>
 			<tr>
 				<td>Newbie</td>
@@ -52,6 +66,11 @@
 				<td>50</td>
 			</tr>
 		</table>
-		
+		<img src = 'white.png' alt = '' usemap = '#map' style = 'position:absolute; z-index:2', coords = '0,1360,660,0'>
 	</body>
+	
+	<map name = 'map'>
+		<area shape = 'rect' coords = '87, 487, 595, 560' href = 'index.html' alt = ''>
+	</map>
+	<button style = 'position:absolute; z-index:3' type = 'button' onclick = 'getHS();changeT()'>Press to see Highscore</button>
 </html>
