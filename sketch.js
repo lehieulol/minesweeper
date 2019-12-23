@@ -183,6 +183,12 @@ function showMine() {
       }
     }
   }
+  for(let i = 0; i < 20; i++){
+    textSize(Math.random()*40+10);
+    let sx = Math.random()*1348, sy = Math.random()*660;
+    translate(sx,sy);
+    rotate(Math.random()*2*PI);
+    text('You lose',-200,-40,400,80);
 }
 
 function Open(xx, yy) {
