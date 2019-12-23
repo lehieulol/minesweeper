@@ -16,7 +16,15 @@ function changeTB(xxx){
 		}
 	}
 	re.open('GET','HS.xml',true);
+	re.send();	
+}
+function test(){
+	let re = new XMLHttpRequest();
+	re.onreadystatechange = function(){
+		if(this.readyState = 4 && this.status = 200){
+			console.log(this.responseText);
+		}
+	}
+	re.open('GET','test.txt',true);
 	re.send();
-	getHS.responseXML.getElementsByTagName('all').innerHTML;
-	
 }
