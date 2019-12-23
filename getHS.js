@@ -3,7 +3,7 @@ function changeTB(){
 	ctb.onreadystatechange = function(){
 		if(this.readyState === 4 && this.status === 200){
 			let temp = this.responseText;
-			let table = '<caption>HIGH SCORE</caption><tr><th>Mode</th><th>Player</th><th id = 'hsc'>High score</th></tr>'
+			let table = '<caption>HIGH SCORE</caption><tr><th>Mode</th><th>Player</th><th id = \'hsc\'>High score</th></tr>'
 			let a = [[0,0],[0,0],[0,0]], f = 0, l = 0, mode = ['Newbie','Pupil','Expert'];
 			for(let i = 0; i < 3; i++){
 				table += '<tr><td>'+mode[i]+'</td>';
