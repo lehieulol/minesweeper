@@ -9,5 +9,7 @@ function getHS(){
 	re.send();
 }
 function changeTB(xxx){
+	let tb = getHS.responseXML.getElementsByTagName('all').innerHTML;
+	print(tb);
 	document.getElementById('hs').innerHTML = xxx.responseText;
 }
