@@ -180,8 +180,8 @@ function Open(xx,yy){
 	}
 	op_count++;
 	if(op_count+bom == sizeX*sizeY){
-		tt = 2;
 		win();
+		tt = 2;
 	}
 }
 function mouseClicked(){
