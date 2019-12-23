@@ -1,7 +1,7 @@
 function getHS(){
 	let re = new XMLHttpRequest();
 	re.onreadystatechange = function(){
-		if(this.readyState == 4 && this.status == 200){
+		if(this.readyState === 4 && this.status === 200){
 			return this;
 		}
 	}
@@ -11,8 +11,8 @@ function getHS(){
 function changeTB(xxx){
 	let re = new XMLHttpRequest();
 	re.onreadystatechange = function(){
-		if(this.readyState == 4 && this.status == 200){
-			document.getElementById('hs').innerHTML = this.responseXML.getElementsByTagName('all').innerXML;
+		if(this.readyState === 4 && this.status === 200){
+			document.getElementById('hs').innerHTML = this.responseXML.getElementsByTagName('all').nodeValue;
 		}
 	}
 	re.open('GET','HS.xml',true);
@@ -21,7 +21,7 @@ function changeTB(xxx){
 function test(){
 	let re = new XMLHttpRequest();
 	re.onreadystatechange = function(){
-		if(this.readyState == 4 && this.status == 200){
+		if(this.readyState === 4 && this.status === 200){
 			console.log(this.responseText);
 		}
 	}
