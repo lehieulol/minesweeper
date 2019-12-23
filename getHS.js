@@ -10,6 +10,6 @@ function getHS(){
 }
 function changeTB(xxx){
 	let tb = getHS.responseXML.getElementsByTagName('all').innerHTML;
-	print(tb);
+	console.log(tb);
 	document.getElementById('hs').innerHTML = xxx.responseText;
 }
