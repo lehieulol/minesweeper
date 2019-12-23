@@ -13,7 +13,7 @@ function changeTB(){
 					}
 					a[i][j] = temp.slice(f,l);
 					l++;
-					table += '<td>'+a[i][j]+'</td>;
+					table += '<td>'+a[i][j]+'</td>';
 				}
 				table += '</tr>';
 			}
