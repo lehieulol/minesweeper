@@ -1,12 +1,21 @@
-<de>
-	<player>Lichtut</player>
-	<score>99999</score>
-</de>
-<vua>
-	<player>Lichtut</player>
-	<score>99999</score>
-</vua>
-<kho>
-	<player>Lichtut</player>
-	<score>99999</score>
-</kho>
+<caption>HIGH SCORE</caption>
+<tr>
+	<th>Mode</th>
+	<th>Player</th>
+	<th id = 'hsc'>High score</th>
+</tr>
+<tr>
+	<td>Newbie</td>
+	<td id = 'de1'>Lichtut</td>
+	<td id = 'de2'>999</td>
+</tr>
+<tr id = 'vua'>
+	<td>Pupil</td>
+	<td id = 'vua1'>Lichtut</td>
+	<td id = 'vua2'>999</td>
+</tr>
+<tr id = 'kho'>
+	<td >Expert</td>
+	<td id = 'kho1'>Lichtut</td>
+	<td id = 'kho2'>999</td>
+</tr>

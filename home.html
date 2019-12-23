@@ -50,17 +50,17 @@
 				<th>Player</th>
 				<th id = 'hsc'>High score</th>
 			</tr>
-			<tr>
+			<tr id = 'de'>
 				<td>Newbie</td>
 				<td>Lichtut</td>
 				<td>5</td>
 			</tr>
-			<tr>
+			<tr id = 'vua'>
 				<td>Pupil</td>
 				<td>Lichtut</td>
 				<td>20</td>
 			</tr>
-			<tr>
+			<tr id = 'kho'>
 				<td>Expert</td>
 				<td>Lichtut</td>
 				<td>50</td>
@@ -72,5 +72,6 @@
 	<map name = 'map'>
 		<area shape = 'rect' coords = '87, 487, 595, 560' href = 'index.html' alt = ''>
 	</map>
-	<button style = 'position:absolute; z-index:3' type = 'button' onclick = 'getHS();changeT()'>Press to see Highscore</button>
+	<script scr = 'getHS.js'></script>
+	<button style = 'position:absolute; z-index:3' type = 'button' onclick = 'changeTB(getHS())'>Press to see Highscore</button>
 </html>
