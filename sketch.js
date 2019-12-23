@@ -180,9 +180,40 @@ function Open(xx,yy){
 	}
 	op_count++;
 	if(op_count+bom == sizeX*sizeY){
-		win();
 		tt = 2;
+		win();
 	}
+}
+let lx = -1, ly = -1;
+function mousePressed(){
+	let xxx = parseInt((mouseY-120)/size), yyy = parseInt(mouseX/size);
+	if(xxx == lx && yyy == ly) return;
+	if(lx != -1){
+		if(t_t[lx][ly] == 'o'){
+			for(let i = 0; i < 8; i++){
+				if(lx+dx[i]>=0 && lx+dx[i]<sizeX && ly+dy[i]>=0 && ly+dy[i]<sizeY && t_t[lx+dx[i]][ly+dy[i]] == 'p'){
+					t_t[lx+dx[i]][ly+dy[i]] = 0;
+					squ((ly+dy[i])*size+120,(lx+dx[i])*size);
+				}
+			}
+		}else if(t_t[lx][ly] = 'p'){
+			t_t[lx][ly] = 0;
+			squ(ly*size+120,lx*size);
+		}
+	}
+	if(t_t[xxx][yyy] == 'o'){
+		for(let i = 0; i < 8; i++){
+			if(xxx+dx[i]>=0 && xxx+dx[i]<sizeX && yyy+dy[i]>=0 && yyy+dy[i]<sizeY && t_t[xxx+dx[i]][yyy+dy[i]] == 0){
+				t_t[xxx+dx[i]][yyy+dy[i]] = 'p';
+				p_squ((yyy+dy[i])*size+120,(xxx+dx[i])*size);
+			}
+		}
+	}else if(t_t[lx][ly] = 0){
+		t_t[lx][ly] = 'p';
+		p_squ(ly*size+120,lx*size);
+	}
+	lx = xxx;
+	ly = yyy;
 }
 function mouseClicked(){
     if(mouseY < 120 || tt == 2) return;
@@ -226,6 +257,7 @@ function makeboard() {
 	size = 540/sizeX;
 	textSize(size*0.9);
 	tt = 0;
+	lx = -1; ly = -1;
 	flag_count = bom;
 	op_count = 0;
 	board = []; t_t  = [];
@@ -269,7 +301,7 @@ function setup() {
 }
 
 function draw() {
-    if(tt == 0) tim = 0;
+    	if(tt == 0) tim = 0;
 	else if(tt == 1)tim = parseInt((Date.now()-s_tim)/1000);
 	printd(680,10,tim);
 	printd(680,65,flag_count);
