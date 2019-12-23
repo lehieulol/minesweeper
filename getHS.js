@@ -1,6 +1,6 @@
-function changeTB(xxx){
-	let re = new XMLHttpRequest();
-	re.onreadystatechange = function(){
+function changeTB(){
+	let ctb = new XMLHttpRequest();
+	ctb.onreadystatechange = function(){
 		if(this.readyState === 4 && this.status === 200){
 			let temp = this.responseText;
 			let table = '<caption>HIGH SCORE</caption><tr><th>Mode</th><th>Player</th><th id = 'hsc'>High score</th></tr>'
@@ -20,8 +20,8 @@ function changeTB(xxx){
 			document.getElementById('hs').innerHTML = table;
 		}
 	}
-	re.open('GET','HS.txt',true);
-	re.send();
+	ctb.open('GET','HS.txt',true);
+	ctb.send();
 }
 function test(){
 	let re = new XMLHttpRequest();
