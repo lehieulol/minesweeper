@@ -1,22 +1,27 @@
-function getHS(){
-	let re = new XMLHttpRequest();
-	re.onreadystatechange = function(){
-		if(this.readyState === 4 && this.status === 200){
-			return this;
-		}
-	}
-	re.open('GET','HS.xml',true);
-	re.send();
-}
 function changeTB(xxx){
 	let re = new XMLHttpRequest();
 	re.onreadystatechange = function(){
 		if(this.readyState === 4 && this.status === 200){
-			document.getElementById('hs').innerHTML = this.responseXML.getElementsByTagName('all').nodeValue;
+			let temp = this.responseText;
+			let table = '<caption>HIGH SCORE</caption><tr><th>Mode</th><th>Player</th><th id = 'hsc'>High score</th></tr>'
+			let a = [[0,0],[0,0],[0,0]], f = 0, l = 0, mode = ['Newbie','Pupil','Expert'];
+			for(let i = 0; i < 3; i++){
+				table += '<tr><td>'+mode[i]+'</td>';
+				for(let j = 0; j < 2; j++){
+					while(temp[l] != '\n'){
+						l++;
+					}
+					a[i][j] = temp.slice(f,l);
+					l++;
+					table += '<td>'+a[i][j]+'</td>;
+				}
+				table += '</tr>';
+			}
+			document.getElementById('hs').innerHTML = table;
 		}
 	}
-	re.open('GET','HS.xml',true);
-	re.send();	
+	re.open('GET','HS.txt',true);
+	re.send();
 }
 function test(){
 	let re = new XMLHttpRequest();
