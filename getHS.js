@@ -9,7 +9,14 @@ function getHS(){
 	re.send();
 }
 function changeTB(xxx){
-	let tb = getHS.responseXML.getElementsByTagName('all').innerHTML;
-	console.log(tb);
-	document.getElementById('hs').innerHTML = xxx.responseText;
+	let re = new XMLHttpRequest();
+	re.onreadystatechange = function(){
+		if(this.readyState = 4 && this.status = 200){
+			document.getElementById('hs').innerHTML = this.responseXML.getElementsByTagName('all').innerXML;
+		}
+	}
+	re.open('GET','HS.xml',true);
+	re.send();
+	getHS.responseXML.getElementsByTagName('all').innerHTML;
+	
 }
